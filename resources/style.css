@@ -10,7 +10,7 @@ body {
 
 h1 {
 	position: absolute;
-	font-size: 25px;
+	font-size: 2em; 
 	color: black;
       top: 2%;
       left: 2%;
@@ -63,8 +63,13 @@ h2 {
 	justify-content: center;
 }
 
+#auswahl span:first-child {
+	margin-left: 5%;
+}
+
 .ansicht {
 	margin-left: 5%;
+	margin-right:3%;
 	border: 1px solid black; 
 	display: flex; 
 	justify-content: center;
@@ -221,4 +226,35 @@ ion-icon {
 
 #weiter:hover a {
 	color: black;
+}
+
+
+
+
+@media (max-width: 1200px) {
+	body {
+		font-size: 10px;
+	}
+
+	h1 {
+		font-size: 1.5em;
+	}
+
+	.ansicht {
+		margin-left:2%;
+	}
+
+	#auswahl span:first-child {
+		margin-left: 2%;
+	}
+}
+
+@media (max-width: 480px) {
+	body {
+		font-size: 10px;
+	}
+
+	h1 {
+		font-size: 1em;
+	}
 }
