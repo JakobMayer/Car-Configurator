@@ -21,7 +21,7 @@
 			<span class="colorPicker"><input id="glas-color" type="color" value="#ffffff"></input><br/>Glas</span>
 			<span class="colorPicker"><input id="felgen-color" type="color" value="#ffffff"></input><br/>Felgen</span>
 			<span class="colorPicker"><input id="leder-color" type="color" value="#484642"></input><br/>Leder</span>
-			<span class="colorPicker"><input id="armatur-color" type="color" value="#D8D4CF"></input><br/>Amaturen</span>
+			<span class="colorPicker"><input id="armatur-color" type="color" value="#D8D4CF"></input><br/>Armaturen</span>
 			<span class="colorPicker"><input id="naht-color" type="color" value="#990000"></input><br/>Nähte</span>
 			<span class="colorPicker"><input id="lMetall-color" type="color" value="#D8D4CF"></input><br/>Lenkrad-Metall</span>
 			<span class="colorPicker"><input id="lLeder-color" type="color" value="#747070"></input><br/>Lenkrad-Leder</span>
@@ -108,6 +108,8 @@
 				controls.dampingFactor = 0.25;
 				controls.minDistance = 2;
                 controls.maxDistance = 8;
+				controls.maxPolarAngle = Math.PI / 2;
+                controls.update();
 				
 				const außenansichtButton = document.getElementById('außenansicht');
                 const fahrerperspektiveButton = document.getElementById('fahrerperspektive');
@@ -146,8 +148,7 @@
 					document.getElementById("source-link").style.color = "white";
                 }
 
-                controls.maxPolarAngle = Math.PI / 2;
-                controls.update();
+                
 
 				// -----------------------------------------------------------------
                 // Raum
@@ -295,7 +296,7 @@
 				// -----------------------------------------------------------------
 				// Auto
 				
-				const shadow = new THREE.TextureLoader().load( 'Ferrari/ferrari_ao.png' );
+				const shadow = new THREE.TextureLoader().load( 'Ferrari/ferrari_shadow.png' );
 
 				const dracoLoader = new DRACOLoader();
 				dracoLoader.setDecoderPath( 'jsm/libs/draco/gltf/' );
